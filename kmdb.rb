@@ -70,12 +70,45 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
+Movie.destroy_all
+
+Person.destroy_all
+
 # Generate models and tables, according to the domain model
 # TODO!
+
+p Movie.all.count
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
 # TODO!
+
+movie1 = Movie.new
+movie1.title= "Batman Begins"
+movie1.year_released = "2005"
+movie1.rating = "PG-13"
+movie1.director = "Christopher Nolan"
+movie1.save
+
+p Movie.all.count
+
+movie2 = Movie.new
+movie2.title= "The Dark Knight"
+movie2.year_released = "2008"
+movie2.rating = "PG-13"
+movie2.director = "Christopher Nolan"
+movie2.save
+
+p Movie.all.count
+
+movie3 = Movie.new
+movie3.title= "The Dark Knight Rises"
+movie3.year_released = "2012"
+movie3.rating = "PG-13"
+movie3.director = "Christopher Nolan"
+movie3.save
+
+p Movie.all.count
 
 # Prints a header for the movies output
 puts "Movies"
@@ -84,6 +117,8 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output
 # TODO!
+
+BatmanBegins = Movie.where({ title: "Batman Begins" })[0]
 
 # Prints a header for the cast output
 puts ""
